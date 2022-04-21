@@ -37,30 +37,47 @@ function playRound(playerSelection, computerSelection) {
     // for each player selection
     if (playerSelection === 'rock') { 
         if (computerSelection === 'paper') { 
-            return 'You lose! Paper beats Rock';
+            console.log('You lose! Paper beats Rock');
+            return 'computer';
         } else if (computerSelection === 'scissors') {
-            return 'You win! Rock beats Scissors';
+            console.log('You win! Rock beats Scissors');
+            return 'player';
         } else if (computerSelection === 'rock') {
-            return 'Tie between Rock and Rock!'
+            console.log('Tie between Rock and Rock!');
+            return 'tie';
         }
     } else if (playerSelection === 'paper') {
         if (computerSelection === 'paper') { 
-            return 'Tie between Paper and Paper!';
+            console.log('Tie between Paper and Paper!');
+            return 'tie';
         } else if (computerSelection === 'scissors') {
-            return 'You lose! Scissors beats Paper';
+            console.log('You lose! Scissors beats Paper');
+            return 'computer';
         } else if (computerSelection === 'rock') {
-            return 'You win! Paper beats Rock'
+            console.log('You win! Paper beats Rock');
+            return 'player';
         }
     } else if (playerSelection === 'scissors') {
         if (computerSelection === 'paper') { 
-            return 'You win! Scissors beats Paper';
+            console.log('You win! Scissors beats Paper');
+            return 'player';
         } else if (computerSelection === 'scissors') {
-            return 'Tie between Scissors and Scissors!';
+            console.log('Tie between Scissors and Scissors!');
+            return 'tie';
         } else if (computerSelection === 'rock') {
-            return 'You lose! Rock beats Scissors'
+            console.log('You lose! Rock beats Scissors');
+            return 'computer';
         }
     }
     // Return the winner in a string
+}
+
+function game(){
+    for (let i = 0, i < 5, i++) {
+        playerSelection = window.prompt('Rock, paper, or scissors?', 'Rock, Paper, Scissors');
+        computerSelection = computerPlay();
+        playRound(playerSelection, computerSelection);
+    }
 }
 
 function testPlay() {
