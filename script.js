@@ -72,15 +72,40 @@ function playRound(playerSelection, computerSelection) {
     // Return the winner in a string
 }
 
-function game(){
-    for (let i = 0, i < 5, i++) {
-        playerSelection = window.prompt('Rock, paper, or scissors?', 'Rock, Paper, Scissors');
+function game() {
+    let playerWins = 0;
+    let computerWins = 0;
+    let ties = 0;
+    let roundCount = 0;
+    let playing = true;
+    while(playing) {
+        playerSelection = window.prompt('Rock, paper, or scissors?', 'rock');
         computerSelection = computerPlay();
-        playRound(playerSelection, computerSelection);
+        winner = playRound(playerSelection, computerSelection);
+        switch(winner) {
+            case 'player':
+                playerWins++;
+                roundCount++;
+                break;
+            case 'computer':
+                computerWins++;
+                roundCount++;
+                break;
+            case 'tie':
+                ties++;
+                roundCount++;
+                break;
+        }
+        if (roundCount >= 5) {playing = false}
+    }
+    if (playerWins > computerWins) {
+        alert(`You win! Final score: Player - ${playerWins} / Computer: ${computerWins} / Ties: ${ties}`);
+    } else {
+        alert(`You lose! Final score: Player - ${playerWins} / Computer: ${computerWins} / Ties: ${ties}`)
     }
 }
 
-function testPlay() {
+function testPlay() { // Test that the computerPlay function is truly random
     let x = 0;
     let rock = 0;
     let paper = 0
