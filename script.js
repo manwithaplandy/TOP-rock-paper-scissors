@@ -28,6 +28,41 @@ function computerPlay() {
 
 }
 
+function playRound(playerSelection, computerSelection) {
+    // Set inputs to lowercase to make answers case insensitive
+    playerSelection = playerSelection.toLowerCase();
+    computerSelection = computerSelection.toLowerCase();
+    // Determine who wins with series of if statements
+    // Go through various computer selection scenarios
+    // for each player selection
+    if (playerSelection === 'rock') { 
+        if (computerSelection === 'paper') { 
+            return 'You lose! Paper beats Rock';
+        } else if (computerSelection === 'scissors') {
+            return 'You win! Rock beats Scissors';
+        } else if (computerSelection === 'rock') {
+            return 'Tie between Rock and Rock!'
+        }
+    } else if (playerSelection === 'paper') {
+        if (computerSelection === 'paper') { 
+            return 'Tie between Paper and Paper!';
+        } else if (computerSelection === 'scissors') {
+            return 'You lose! Scissors beats Paper';
+        } else if (computerSelection === 'rock') {
+            return 'You win! Paper beats Rock'
+        }
+    } else if (playerSelection === 'scissors') {
+        if (computerSelection === 'paper') { 
+            return 'You win! Scissors beats Paper';
+        } else if (computerSelection === 'scissors') {
+            return 'Tie between Scissors and Scissors!';
+        } else if (computerSelection === 'rock') {
+            return 'You lose! Rock beats Scissors'
+        }
+    }
+    // Return the winner in a string
+}
+
 function testPlay() {
     let x = 0;
     let rock = 0;
