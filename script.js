@@ -85,15 +85,15 @@ function game() {
         switch(winner) {
             case 'player':
                 playerWins++;
-                roundCount++;
+                //roundCount++;
                 break;
             case 'computer':
                 computerWins++;
-                roundCount++;
+                //roundCount++;
                 break;
             case 'tie':
                 ties++;
-                roundCount++;
+                //roundCount++;
                 break;
         }
         // if (roundCount >= 5) {playing = false}
@@ -105,28 +105,29 @@ function game() {
     }
 }
 
-function testPlay() { // Test that the computerPlay function is truly random
-    let x = 0;
-    let rock = 0;
-    let paper = 0
-    let scissors = 0;
-    while (x < 100) {
-        switch (computerPlay()) {
-            case 'Rock':
-                rock++;
-                x++;
-                break
-            case 'Paper':
-                paper++;
-                x++;
-                break;
-            case 'Scissors':
-                scissors++;
-                x++;
-                break;
-        }
-    }
-    console.log(`Rock: ${rock}`);
-    console.log(`Paper: ${paper}`);
-    console.log(`Scissors: ${scissors}`);
-}
+// function testPlay() { // Test that the computerPlay function is truly random
+//     let x = 0;
+//     let rock = 0;
+//     let paper = 0
+//     let scissors = 0;
+//     while (x < 100) {
+//         switch (computerPlay()) {
+//             case 'Rock':
+//                 rock++;
+//                 x++;
+//                 break
+//             case 'Paper':
+//                 paper++;
+//                 x++;
+//                 break;
+//             case 'Scissors':
+//                 scissors++;
+//                 x++;
+//                 break;
+//         }
+//     }
+//     console.log(`Rock: ${rock}`);
+//     console.log(`Paper: ${paper}`);
+//     console.log(`Scissors: ${scissors}`);
+// }
+
