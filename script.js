@@ -76,7 +76,7 @@ function game() {
     let playerWins = 0;
     let computerWins = 0;
     let ties = 0;
-    let roundCount = 0;
+    // let roundCount = 0; // Removing 5-round maximum
     let playing = true;
     while(playing) {
         playerSelection = window.prompt('Rock, paper, or scissors?', 'rock');
@@ -96,7 +96,7 @@ function game() {
                 roundCount++;
                 break;
         }
-        if (roundCount >= 5) {playing = false}
+        // if (roundCount >= 5) {playing = false}
     }
     if (playerWins > computerWins) {
         alert(`You win! Final score: Player - ${playerWins} / Computer: ${computerWins} / Ties: ${ties}`);
