@@ -1,3 +1,5 @@
+let scoreBoard = document.getElementById('scoreboard');
+
 function computerPlay() {
     // Function to generate random numbers within a range, which for this script will be 1-3.
     const randomNumbers = (min, max) => {
