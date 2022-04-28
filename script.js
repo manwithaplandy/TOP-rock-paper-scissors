@@ -4,6 +4,7 @@ let resultsBoard2 = document.getElementById('resultsBoard2');
 let playerScore = document.getElementById('playerScore');
 let computerScore = document.getElementById('computerScore');
 let startButton = document.getElementById('play');
+let winnerBoard = document.getElementById('winnerBoard');
 
 let roundCount = 0;
 let playerWins = 0;
@@ -82,6 +83,15 @@ let updateStuff = (computerSelection) => {
     }
     playerScore.innerText = playerWins;
     computerScore.innerText = computerWins;
+    if (roundCount >= 5) {
+        let finalWinner;
+        if (computerWins > playerWins) {
+            finalWinner = 'Computer';
+        } else {
+            finalWinner = 'Player';
+        }
+        winnerBoard.textContent = `And the winner after ${roundCount} rounds is.....${finalWinner}!`;
+    }
 }
 
 function playRound(playerSelection, computerSelection) {
